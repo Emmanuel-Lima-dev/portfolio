@@ -3,10 +3,20 @@ window.addEventListener("scroll", ()=>{
     header.classList.toggle("header", window.scrollY>0);
 });
 
+
+
 let hamburguesa=document.querySelector(".cont-hamburguesa"),
-ul=document.querySelector("ul");
+ul=document.querySelector("ul"),
+body=document.querySelector("body");
 
 
-hamburguesa.addEventListener("click", ()=>{
-    ul.classList.toggle("aparece-menu");
+
+
+hamburguesa.addEventListener("click", (e)=>{
+    e.stopPropagation();
+    ul.classList.toggle("aparece-menu"); 
+});
+
+window.addEventListener("click",()=>{
+    ul.classList.remove("aparece-menu");
 });
